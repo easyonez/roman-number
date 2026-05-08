@@ -12,6 +12,13 @@ import org.junit.Test;
 public class IntegerToRomanTest {
 
     @Test
+    public void convert_returnsEmpty_when0() {
+        String result = IntegerToRoman.convert(0);
+
+        assertEquals("", result);
+    }
+
+    @Test
     public void convert_returnsI_when1() {
         String result = IntegerToRoman.convert(1);
 

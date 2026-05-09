@@ -38,4 +38,28 @@ public class IntegerToRomanTest {
 
         assertEquals("III", result);
     }
+
+    @Test
+    public void convert_returnsIV_when4() {
+        String result = IntegerToRoman.convert(4);
+
+        assertEquals("IV", result);
+    }
+
+    @Test
+    public void convert_returnsV_when5() {
+        String result = IntegerToRoman.convert(5);
+
+        assertEquals("V", result);
+    }
+
+    @Test
+    public void convert_returnsVI_when6() {
+        String result = IntegerToRoman.convert(6);
+
+        assertEquals("VI", result);
+    }
+
+
+
 }

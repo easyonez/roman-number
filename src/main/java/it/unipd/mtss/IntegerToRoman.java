@@ -9,16 +9,29 @@ public class IntegerToRoman {
     public static String convert(int number) {
         StringBuilder result = new StringBuilder();
 
-        for (int i = 0; i < number; i++) {
-            if ((i + 1) % 5 == 4) {
-                result.delete(result.length() - 3, result.length());
-                result.append("IV");
-            } else if ((i + 1) % 5 == 0) {
-                result.delete(result.length() - 2, result.length());
-                result.append("V");
-            } else {
-                result.append("I");
-            }
+        while (number >= 10) {
+            number -= 10;
+            result.append("X");
+        }
+
+        while (number >= 9) {
+            number -= 9;
+            result.append("IX");
+        }
+
+        while (number >= 5) {
+            number -= 5;
+            result.append("V");
+        }
+
+        while (number >= 4) {
+            number -= 4;
+            result.append("IV");
+        }
+
+        while (number >= 1) {
+            number -= 1;
+            result.append("I");
         }
 
         return result.toString();

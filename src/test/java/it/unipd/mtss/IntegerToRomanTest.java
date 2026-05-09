@@ -60,6 +60,26 @@ public class IntegerToRomanTest {
         assertEquals("VI", result);
     }
 
+    @Test
+    public void convert_returnsVII_when7() {
+        String result = IntegerToRoman.convert(7);
+
+        assertEquals("VII", result);
+    }
+
+    @Test
+    public void convert_returnsIX_when9() {
+        String result = IntegerToRoman.convert(9);
+
+        assertEquals("IX", result);
+    }
+
+    @Test
+    public void convert_returnsX_when10() {
+        String result = IntegerToRoman.convert(10);
+
+        assertEquals("X", result);
+    }
 
 
 }

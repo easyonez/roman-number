@@ -152,12 +152,14 @@ public class IntegerToRomanTest {
         assertEquals("XLII", result);
     }
 
+    @Test
     public void convert_returnsXLV_when45() {
         String result = IntegerToRoman.convert(45);
 
         assertEquals("XLV", result);
     }
 
+    @Test
     public void convert_returnsL_when50() {
         String result = IntegerToRoman.convert(50);
 

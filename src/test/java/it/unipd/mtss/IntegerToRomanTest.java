@@ -81,5 +81,50 @@ public class IntegerToRomanTest {
         assertEquals("X", result);
     }
 
+    @Test
+    public void convert_returnsXI_when11() {
+        String result = IntegerToRoman.convert(11);
+
+        assertEquals("XI", result);
+    }
+
+    @Test
+    public void convert_returnsXIII_when13() {
+        String result = IntegerToRoman.convert(13);
+
+        assertEquals("XIII", result);
+    }
+
+
+    @Test
+    public void convert_returnsXV_when15() {
+        String result = IntegerToRoman.convert(15);
+
+        assertEquals("XV", result);
+    }
+
+    @Test
+    public void convert_returnsXVIII_when18() {
+        String result = IntegerToRoman.convert(18);
+
+        assertEquals("XVIII", result);
+    }
+
+    @Test
+    public void convert_returnsXIX_when19() {
+        String result = IntegerToRoman.convert(19);
+
+        assertEquals("XIX", result);
+    }
+
+    @Test
+    public void convert_returnsXX_when20() {
+        String result = IntegerToRoman.convert(20);
+
+        assertEquals("XX", result);
+    }
+
+
+
 
 }

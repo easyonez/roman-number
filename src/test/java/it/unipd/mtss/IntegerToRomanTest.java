@@ -124,7 +124,43 @@ public class IntegerToRomanTest {
         assertEquals("XX", result);
     }
 
+    @Test
+    public void convert_returnsXXII_when22() {
+        String result = IntegerToRoman.convert(22);
 
+        assertEquals("XXII", result);
+    }
 
+    @Test
+    public void convert_returnsXXXV_when35() {
+        String result = IntegerToRoman.convert(35);
 
+        assertEquals("XXXV", result);
+    }
+
+    @Test
+    public void convert_returnsXL_when40() {
+        String result = IntegerToRoman.convert(40);
+
+        assertEquals("XL", result);
+    }
+
+    @Test
+    public void convert_returnsXLII_when42() {
+        String result = IntegerToRoman.convert(42);
+
+        assertEquals("XLII", result);
+    }
+
+    public void convert_returnsXLV_when45() {
+        String result = IntegerToRoman.convert(45);
+
+        assertEquals("XLV", result);
+    }
+
+    public void convert_returnsL_when50() {
+        String result = IntegerToRoman.convert(50);
+
+        assertEquals("L", result);
+    }
 }

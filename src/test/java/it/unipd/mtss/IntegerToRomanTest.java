@@ -165,4 +165,34 @@ public class IntegerToRomanTest {
 
         assertEquals("L", result);
     }
+
+    @Test
+    public void convert_returnsLXXXVIII_when88() {
+        String result = IntegerToRoman.convert(88);
+
+        assertEquals("LXXXVIII", result);
+    }
+    @Test
+    public void convert_returnsXC_when90() {
+        String result = IntegerToRoman.convert(90);
+
+        assertEquals("XC", result);
+    }
+
+    @Test
+    public void convert_returnsXCIX_when99() {
+        String result = IntegerToRoman.convert(99);
+
+        assertEquals("XCIX", result);
+    }
+
+    @Test
+    public void convert_returnsC_when100() {
+        String result = IntegerToRoman.convert(100);
+
+        assertEquals("C", result);
+    }
+
+
 }
+

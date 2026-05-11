@@ -9,10 +9,10 @@ public class IntegerToRoman {
     public static String convert(int number) {
         StringBuilder result = new StringBuilder();
 
-        String[] arr_R = {"D", "CD", "C", "XC", "L",
+        String[] arr_R = {"M", "CM", "D", "CD", "C", "XC", "L",
                         "XL", "X", "IX", "V", "IV", "I"};
 
-        int[] arr_A = {500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        int[] arr_A = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
         int i = 0;
 

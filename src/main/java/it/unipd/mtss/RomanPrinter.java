@@ -70,7 +70,7 @@ public class RomanPrinter {
             "|_|  |_|"
     };
 
-    private static String[] getAsciiLetter(char romanCharacter) {
+    static String[] getAsciiLetter(char romanCharacter) {
         switch (romanCharacter) {
             case 'I': return I;
             case 'V': return V;

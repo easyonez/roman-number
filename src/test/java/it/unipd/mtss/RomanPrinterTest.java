@@ -6,6 +6,7 @@
 package it.unipd.mtss;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -154,6 +155,13 @@ public class RomanPrinterTest {
                         "|_|  |_|\n";
         assertEquals(real, result);
 
+    }
+
+    @Test
+    public void getAsciiLetter_ReturnsEmptyArray_whenInvalidCharacter() {
+        String[] result = RomanPrinter.getAsciiLetter('Z');
+        assertEquals(6, result.length);
+        assertNull(result[0]);
     }
 
 

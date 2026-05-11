@@ -193,6 +193,39 @@ public class IntegerToRomanTest {
         assertEquals("C", result);
     }
 
+    @Test
+    public void convert_returnsCI_when101() {
+        String result = IntegerToRoman.convert(101);
 
+        assertEquals("CI", result);
+    }
+
+    @Test
+    public void convert_returnsC_when399() {
+        String result = IntegerToRoman.convert(399);
+
+        assertEquals("CCCXCIX", result);
+    }
+
+    @Test
+    public void convert_returnsCD_when400() {
+        String result = IntegerToRoman.convert(400);
+
+        assertEquals("CD", result);
+    }
+
+    @Test
+    public void convert_returnsCDLXVI_when466() {
+        String result = IntegerToRoman.convert(466);
+
+        assertEquals("CDLXVI", result);
+    }
+
+    @Test
+    public void convert_returnsD_when500() {
+        String result = IntegerToRoman.convert(500);
+
+        assertEquals("D", result);
+    }
 }
 

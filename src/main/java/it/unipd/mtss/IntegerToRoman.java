@@ -9,49 +9,20 @@ public class IntegerToRoman {
     public static String convert(int number) {
         StringBuilder result = new StringBuilder();
 
-        while (number >= 100) {
-            number -= 100;
-            result.append("C");
-        }
+        String[] arr_R = {"D", "CD", "C", "XC", "L",
+                        "XL", "X", "IX", "V", "IV", "I"};
 
-        while (number >= 90) {
-            number -= 90;
-            result.append("XC");
-        }
+        int[] arr_A = {500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
-        while (number >= 50) {
-            number -= 50;
-            result.append("L");
-        }
+        int i = 0;
 
-        while (number >= 40) {
-            number -= 40;
-            result.append("XL");
-        }
-
-        while (number >= 10) {
-            number -= 10;
-            result.append("X");
-        }
-
-        while (number >= 9) {
-            number -= 9;
-            result.append("IX");
-        }
-
-        while (number >= 5) {
-            number -= 5;
-            result.append("V");
-        }
-
-        while (number >= 4) {
-            number -= 4;
-            result.append("IV");
-        }
-
-        while (number >= 1) {
-            number -= 1;
-            result.append("I");
+        while (number > 0) {
+            if(number >= arr_A[i]) {
+                result.append(arr_R[i]);
+                number -= arr_A[i];
+            } else {
+                i++;
+            }
         }
 
         return result.toString();

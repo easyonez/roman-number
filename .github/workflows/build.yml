@@ -1,0 +1,43 @@
+# Pipeline CI: compila, testa e packaggia il progetto Maven.
+# Trigger: push su qualsiasi branch e pull request verso main/develop.
+# Step distinti per identificare facilmente la causa di un fallimento
+# (compilazione, test, package + analisi statica).
+
+name: build
+
+on:
+  push:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Compile
+        run: mvn -B compile --file pom.xml
+
+      - name: Test
+        run: mvn -B test --file pom.xml
+
+      - name: Package
+        run: mvn -B package --file pom.xml
+
+      - name: Coveralls upload
+        run: |
+          if [ -f target/site/jacoco/jacoco.xml ]; then
+            mvn -B coveralls:report -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }} --file pom.xml
+          else
+            echo "Nessun report di coverage generato, upload saltato"
+          fi

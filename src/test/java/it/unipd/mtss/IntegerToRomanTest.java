@@ -227,5 +227,33 @@ public class IntegerToRomanTest {
 
         assertEquals("D", result);
     }
+
+    @Test
+    public void convert_returnsDLV_when555() {
+        String result = IntegerToRoman.convert(555);
+
+        assertEquals("DLV", result);
+    }
+
+    @Test
+    public void convert_returnsDCCCLXXVII_when877() {
+        String result = IntegerToRoman.convert(877);
+
+        assertEquals("DCCCLXXVII", result);
+    }
+
+    @Test
+    public void convert_returnsCM_when900() {
+        String result = IntegerToRoman.convert(900);
+
+        assertEquals("CM", result);
+    }
+
+    @Test
+    public void convert_returnsM_when1000() {
+        String result = IntegerToRoman.convert(1000);
+
+        assertEquals("M", result);
+    }
 }
 
